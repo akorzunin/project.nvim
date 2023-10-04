@@ -83,7 +83,12 @@ local function find_project_files(prompt_bufnr)
     mode = "insert",
   }
   if cd_successful then
-    builtin.oldfiles(opt)
+    if config.options.show_files == 'oldfiles' then
+      opt.cwd_only = true
+      builtin.oldfiles(opt)
+    elseif config.options.show_files == 'find_files' then
+      builtin.find_files(opt)
+    end
   end
 end
 

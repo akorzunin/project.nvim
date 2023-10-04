@@ -27,6 +27,9 @@ M.defaults = {
   -- Show hidden files in telescope
   show_hidden = false,
 
+  -- file picker after openning project "oldfiles" | "find_files" | nil
+  show_files = "find_files",
+
   -- When set to false, you will get a message when project.nvim changes your
   -- directory.
   silent_chdir = true,
