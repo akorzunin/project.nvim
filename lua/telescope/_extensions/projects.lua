@@ -83,7 +83,7 @@ local function find_project_files(prompt_bufnr)
     mode = "insert",
   }
   if cd_successful then
-    builtin.find_files(opt)
+    builtin.oldfiles(opt)
   end
 end
 
