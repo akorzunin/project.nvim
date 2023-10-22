@@ -88,6 +88,9 @@ local function find_project_files(prompt_bufnr)
       builtin.oldfiles(opt)
     elseif config.options.show_files == 'find_files' then
       builtin.find_files(opt)
+    elseif config.options.show_files == 'builtin' then
+      opt.cwd_only = true
+      builtin.builtin(opt)
     end
   end
 end
