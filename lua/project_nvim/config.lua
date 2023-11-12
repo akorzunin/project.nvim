@@ -27,8 +27,15 @@ M.defaults = {
   -- Show hidden files in telescope
   show_hidden = false,
 
-  -- file picker after openning project "oldfiles" | "find_files" | nil
+  -- file picker after openning project
+  -- * find_files (default)
+  -- * oldfiles
+  -- * builtin
+  -- * filtered_builtin
   show_files = "find_files",
+
+  -- list of Telescope builtins to filter if show_files = "filtered_builtin"
+  list = { find_files = true },
 
   -- When set to false, you will get a message when project.nvim changes your
   -- directory.
@@ -38,7 +45,7 @@ M.defaults = {
   -- * global (default)
   -- * tab
   -- * win
-  scope_chdir = 'global',
+  scope_chdir = "global",
 
   -- Path where project.nvim will store the project history for use in
   -- telescope
