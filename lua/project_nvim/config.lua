@@ -35,7 +35,7 @@ M.defaults = {
   show_files = "find_files",
 
   -- list of Telescope builtins to filter if show_files = "filtered_builtin"
-  list = { find_files = true },
+  list = { "find_files" },
 
   -- When set to false, you will get a message when project.nvim changes your
   -- directory.

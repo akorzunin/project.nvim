@@ -76,6 +76,11 @@ local function change_working_directory(prompt_bufnr, prompt)
   return project_path, cd_successful
 end
 
+local function prepare_list(config_list)
+  P(config_list)
+  return nil
+end
+
 local function find_project_files(prompt_bufnr)
   local project_path, cd_successful = change_working_directory(prompt_bufnr, true)
   local opt = {
@@ -91,7 +96,7 @@ local function find_project_files(prompt_bufnr)
     elseif show_files == "find_files" then
       builtin.find_files(opt)
     elseif show_files == "filtered_builtin" then
-      opt.list = config.options.list
+      opt.list = prepare_list(config.options.list)
       filtered_builtin.filtered_builtin(opt)
     elseif show_files == "builtin" then
       builtin.builtin(opt)

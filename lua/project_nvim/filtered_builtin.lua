@@ -23,7 +23,7 @@ M.filtered_builtin = function(opts)
       })
     end
   end
-
+  print("123")
   local title = "Telescope Builtin"
 
   if opts.include_extensions then
