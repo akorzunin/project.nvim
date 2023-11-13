@@ -23,7 +23,6 @@ M.filtered_builtin = function(opts)
       })
     end
   end
-  print("123")
   local title = "Telescope Builtin"
 
   if opts.include_extensions then
@@ -45,17 +44,17 @@ M.filtered_builtin = function(opts)
   -- Define a comparison function to sort the second table based on the order of keys in the first table
   local function compare(a, b)
     local indexA, indexB
-    for i, v in ipairs(filter_list) do
-      if v == a then
-        indexA = i
-      elseif v == b then
-        indexB = i
+    for k, v in pairs(filter_list) do
+      if k == a.text then
+        indexA = v
+      elseif k == b.text then
+        indexB = v
       end
     end
-    if indexA == nil and indexB == nil then
-      return false
+    if indexA ~= nil and indexB ~= nil then
+      return indexA < indexB
     end
-    return indexA < indexB
+    return indexA ~= nil
   end
 
   -- Sort the second table based on the order of keys in the first table

@@ -77,8 +77,11 @@ local function change_working_directory(prompt_bufnr, prompt)
 end
 
 local function prepare_list(config_list)
-  P(config_list)
-  return nil
+  local config_w_order = {}
+  for i, v in ipairs(config_list) do
+    config_w_order[v] = i
+  end
+  return config_w_order
 end
 
 local function find_project_files(prompt_bufnr)
