@@ -85,6 +85,8 @@ local function prepare_list(config_list)
 end
 
 local function find_project_files(prompt_bufnr)
+  P("prompt_bufnr")
+  P(prompt_bufnr)
   local project_path, cd_successful = change_working_directory(prompt_bufnr, true)
   local opt = {
     cwd = project_path,
@@ -119,6 +121,8 @@ local function browse_project_files(prompt_bufnr)
 end
 
 local function search_in_project_files(prompt_bufnr)
+  P("spf")
+  P(prompt_bufnr)
   local project_path, cd_successful = change_working_directory(prompt_bufnr, true)
   local opt = {
     cwd = project_path,

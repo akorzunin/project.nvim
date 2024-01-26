@@ -5,7 +5,8 @@ local make_entry = require("telescope.make_entry")
 local pickers = require("telescope.pickers")
 local utils = require("telescope.utils")
 local conf = require("telescope.config").values
-
+local telescope_actions = require("project_nvim.telescope_actions")
+-- local
 M = {}
 M.filtered_builtin = function(opts)
   opts.include_extensions = vim.F.if_nil(opts.include_extensions, false)
@@ -94,7 +95,11 @@ M.filtered_builtin = function(opts)
           if not opts.use_default_opts then
             picker_opts = opts
           end
+          P("AOAOA")
+          P(prompt_bufnr)
 
+          -- local a, ok = telescope_actions.change_working_directory(prompt_bufnr, true)
+          -- P(ok)
           actions.close(prompt_bufnr)
           if string.match(selection.text, " : ") then
             -- Call appropriate function from extensions

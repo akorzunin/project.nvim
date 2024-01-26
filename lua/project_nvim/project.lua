@@ -177,6 +177,8 @@ function M.set_pwd(dir, method)
     if vim.fn.getcwd() ~= dir then
       local scope_chdir = config.options.scope_chdir
       if scope_chdir == "global" then
+        P("dir")
+        P(dir)
         vim.api.nvim_set_current_dir(dir)
       elseif scope_chdir == "tab" then
         vim.cmd("tcd " .. dir)
